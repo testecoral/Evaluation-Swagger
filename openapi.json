@@ -7,9 +7,32 @@
   "tags": [
     {
       "name": "Quiz"
+    },
+    {
+      "name": "Evaluation"
     }
   ],
   "paths": {
+    "/evaluations": {
+      "post": {
+        "operationId": "createEvaluation",
+        "tags": [
+          "Evaluation"
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Evaluation"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/quizzes": {
       "get": {
         "operationId": "getQuizzes",
@@ -69,6 +92,14 @@
                   "$ref": "#/components/schemas/Quiz"
                 }
               }
+            },
+            "headers": {
+              "Location": {
+                "description": "URI of the new quiz",
+                "schema": {
+                  "type": "string"
+                }
+              }
             }
           }
         }
@@ -111,6 +142,36 @@
   },
   "components": {
     "schemas": {
+      "Evaluation": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "$id": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/InputEvaluation"
+          }
+        ]
+      },
+      "InputEvaluation": {
+        "type": "object",
+        "properties": {
+          "quiz_id": {
+            "type": "string"
+          },
+          "subject_id": {
+            "type": "string",
+            "description": "The one who is being evaluated."
+          },
+          "answers": {
+            "type": "object"
+          }
+        }
+      },
       "InputQuiz": {
         "type": "object",
         "properties": {
