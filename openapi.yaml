@@ -2,10 +2,14 @@ openapi: 3.0.0
 info:
   title: TesteCoral - Evaluation
   version: '0.1'
+tags:
+  - name: Quiz
 paths:
   /quizzes:
     get:
       operationId: getQuizzes
+      tags:
+        - Quiz
       summary: List all quizzes
       responses:
         '200':
@@ -23,6 +27,8 @@ paths:
                           $ref: '#/components/schemas/Quiz'
     post:
       operationId: createQuiz
+      tags:
+        - Quiz
       summary: Create a quiz
       requestBody:
         content:
@@ -39,6 +45,8 @@ paths:
   '/quizzes/{quiz_id}':
     get:
       operationId: getQuizById
+      tags:
+        - Quiz
       summary: Get a quiz by Id
       parameters:
         - name: quiz_id
