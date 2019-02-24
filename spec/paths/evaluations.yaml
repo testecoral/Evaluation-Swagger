@@ -1,0 +1,11 @@
+post:
+  operationId: createEvaluation
+  tags:
+    - Evaluation
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Evaluation'

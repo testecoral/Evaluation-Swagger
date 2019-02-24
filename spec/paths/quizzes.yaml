@@ -34,3 +34,8 @@ post:
         application/json:
           schema:
             $ref: '#/components/schemas/Quiz'
+      headers:
+        Location:
+          description: URI of the new quiz
+          schema:
+            type: string

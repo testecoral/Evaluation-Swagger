@@ -1,0 +1,9 @@
+type: object
+properties:
+  quiz_id:
+    type: string
+  subject_id:
+    type: string
+    description: The one who is being evaluated.
+  answers:
+    type: object

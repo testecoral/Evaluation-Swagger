@@ -1,0 +1,6 @@
+allOf:
+  - type: object
+    properties:
+      $id:
+        type: string
+  - $ref: '#/components/schemas/InputEvaluation'
