@@ -1,8 +1,6 @@
-type: object
-properties:
-  description:
-    type: string
-  questions:
-    type: array
-    items:
-      $ref: '#/components/schemas/Question'
+allOf:
+  - type: object
+    properties:
+      $id:
+        type: string
+  - $ref: '#/components/schemas/InputQuiz'

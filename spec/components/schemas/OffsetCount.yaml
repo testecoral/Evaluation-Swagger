@@ -1,0 +1,10 @@
+type: object
+properties:
+  $offset:
+    type: number
+    format: integer
+    example: 0
+  $count:
+    type: number
+    format: integer
+    example: 20

@@ -1,5 +1,7 @@
 get:
   operationId: getQuizById
+  tags:
+    - Quiz
   summary: Get a quiz by Id
   parameters:
     - name: quiz_id
@@ -9,7 +11,7 @@ get:
         type: string
   responses:
     '200':
-      description: Found quiz
+      description: OK
       content:
         application/json:
           schema:
