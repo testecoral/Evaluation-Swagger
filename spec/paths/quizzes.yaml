@@ -1,0 +1,6 @@
+get:
+  operationId: getQuizzes
+  summary: List all quizzes
+  responses:
+    '200':
+      description: OK

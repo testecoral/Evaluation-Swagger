@@ -1,0 +1,18 @@
+get:
+  operationId: getQuizById
+  summary: Get a quiz by Id
+  parameters:
+    - name: quiz_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: Found quiz
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Quiz'
+    '404':
+      description: Quiz not found
