@@ -1,0 +1,8 @@
+
+apiTitle: Evaluation
+splitSpec: true
+codeSamples: false
+swaggerUI: true
+travis: true
+repo: testecoral/Evaluation-Swagger
+oasVersion: 3.0.0
